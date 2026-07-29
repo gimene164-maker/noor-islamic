@@ -1,0 +1,91 @@
+{
+  "entities": {
+    "users": {
+      "title": "Users",
+      "description": "User profiles authenticated via Firebase Auth",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid"]
+    },
+    "user_preferences": {
+      "title": "User Preferences",
+      "description": "User notification schedules and app preferences synced to Firebase",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "schedule": { "type": "object" },
+        "theme": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId"]
+    },
+    "favorites": {
+      "title": "User Favorites",
+      "description": "Saved favorite items across Quran, Hadith, Azkar, and Reciters",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "itemId": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "itemId", "type"]
+    },
+    "stories": {
+      "title": "Islamic Stories",
+      "description": "Stories of Prophets and Companions synced with Firestore",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "content": { "type": "string" },
+        "excerpt": { "type": "string" }
+      },
+      "required": ["id", "title"]
+    },
+    "hadiths": {
+      "title": "Prophetic Hadiths",
+      "description": "Hadith database synced with Firestore",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "book": { "type": "string" },
+        "number": { "type": "number" },
+        "arabic": { "type": "string" },
+        "grade": { "type": "string" }
+      },
+      "required": ["id", "arabic"]
+    },
+    "reciters": {
+      "title": "Quran Reciters",
+      "description": "Reciters and audio tracks synced with Firestore",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "reputation": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "books": {
+      "title": "Islamic Library Books",
+      "description": "Books library synced with Firestore",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "category": { "type": "string" }
+      },
+      "required": ["id", "title"]
+    }
+  }
+}
